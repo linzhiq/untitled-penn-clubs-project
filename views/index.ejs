@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demo</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+</head>
+<body>
+
+<style>
+    .item-1 {
+        font-size: 16px;
+    }
+
+    .item-2 {
+        font-size: 14px;
+        color: black !important;
+    }
+
+    .item-3 {
+        font-size: 12px;
+        color: black;
+
+        margin-left: 16px !important;
+        margin-bottom: 10px;
+    }
+
+    .item-3 > * {
+        font-size: 10px !important;
+        color: black;
+
+        margin-left: 0 !important;
+        margin-top: 4px !important;
+    }
+
+</style>
+
+<div class="ui grid" style="margin-top: 50px;">
+    <div class="one wide column">
+
+    </div>
+
+    <div class="three wide column">
+        <div class="ui large vertical menu">
+            <div class="item">
+                <div class="ui input"><input type="text" placeholder="Search..."></div>
+            </div>
+            <div class="item item-1">
+                <b>Type</b>
+                <div class="menu">
+                    <a class="item item-2">Academic/Pre-professional fraternities</a>
+                    <div class="item-3">
+                        <div class="ui label">
+                            History
+                            <div class="detail">2</div>
+                        </div>
+                        <div class="ui label">
+                            Biology/BBB
+                            <div class="detail">3</div>
+                        </div>
+                        <div class="ui label">
+                            Chemistry
+                            <div class="detail">3</div>
+                        </div>
+                        <div class="ui label">
+                            Math
+                            <div class="detail">3</div>
+                        </div>
+                    </div>
+
+                    <a class="item item-2">Greek (Sororities/Fraternities)</a>
+
+                    <div class="ui divider item-3"></div>
+
+                    <a class="item item-2">Athletics</a>
+
+                    <a class="item item-2">Cultural and International</a>
+
+                    <a class="item item-2">Community and Public Service</a>
+
+                    <a class="item item-2">Political/Advocacy</a>
+
+                    <a class="item item-2">Arts/Performance</a>
+
+                    <a class="item item-2">Instructional/Competitive</a>
+
+                    <a class="item item-2">Peer Education/Support</a>
+
+                    <a class="item item-2">Religious/Spiritual</a>
+                </div>
+            </div>
+            <a class="item">
+                <b>Time Commitment</b>
+                <br><br>
+                <div class="ui checkbox item-2">
+                    <input type="checkbox" name="example">
+                    <label>All</label>
+                </div>
+
+                <div class="ui checkbox item-2">
+                    <input type="checkbox" name="example">
+                    <label>0-2 hrs/wk</label>
+                </div>
+
+                <div class="ui checkbox item-2">
+                    <input type="checkbox" name="example">
+                    <label>2-5 hrs/wk</label>
+                </div>
+            </a>
+            <a class="item">
+                <b>Size</b>
+            </a>
+            <a class="item">
+                <b>Interview / Application Process</b>
+            </a>
+            <a class="item">
+                <b>Social Events</b>
+            </a>
+            <a class="item">
+                <b>Leadership</b>
+            </a>
+        </div>
+    </div>
+
+    <div class="one wide column">
+
+    </div>
+
+    <div class="ten wide column">
+        <div class="ui cards">
+            <% for(var i = 0; i < clubs.length; i++) { %>
+            <div class="ui card">
+                <div class="content">
+                    <a class="header"><%= clubs[i]["Full Organization Name"] %></a>
+                    <div class="meta">
+                        <span class="date"><%= clubs[i]["Timestamp"] %></span>
+                    </div>
+                    <div class="description">
+                        <%= clubs[i]["Email Address"] %>
+                    </div>
+                </div>
+                <div class="extra content">
+                    <a>
+                        <i class="tasks icon"></i>
+                        Commitment: <%= clubs[i]["How many hours per week are general club members expected to commit?"] %>
+                    </a>
+                </div>
+                <div class="extra content">
+                    <a>
+                        <i class="users icon"></i>
+                        Size: <%= clubs[i]["Organization Size"] %>
+                    </a>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
